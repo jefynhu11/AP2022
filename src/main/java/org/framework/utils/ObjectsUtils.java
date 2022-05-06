@@ -21,7 +21,7 @@ public class ObjectsUtils {
         try {
             FileOperationsProperties.setProperties("properties"+ File.separator + fileName + ".properties",propKey,propValue);
         } catch(Exception e){
-            System.out.println("Não foi possível ler o arquivo"+e.getMessage());
+            System.out.println("Não foi possível ler o arquivo "+e.getMessage());
         }
     }
 
