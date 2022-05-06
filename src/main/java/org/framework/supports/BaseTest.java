@@ -1,12 +1,10 @@
 package org.framework.supports;
 
-import org.framework.tools.ReportFw;
+import org.framework.tools.reports.ReportFw;
 import org.framework.utils.ObjectsUtils;
 import org.framework.webdrivers.Driver;
 import org.framework.webdrivers.DriverManager;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import static org.framework.webdrivers.DriverFactory.driver;
