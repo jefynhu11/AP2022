@@ -18,8 +18,9 @@ public class MyAccountTask {
         jsExecutor = new JsExecutor();
     }
 
-    public void myAccountHistoryDetails() throws IOException {
+    public void myAccountHistoryDetails() {
         jsExecutor.highLightElement(driver, myAccountAppObject.getOrderHistoryDetailsButton());
+        myAccountAppObject.getOrderHistoryDetailsButton().click();
     }
     public void myCreditSlips() {
         jsExecutor.highLightElement(driver, myAccountAppObject.getMyCreditSlipsButton());
