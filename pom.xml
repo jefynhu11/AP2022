@@ -44,12 +44,14 @@
       <artifactId>opencsv</artifactId>
       <version>5.6</version>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>com.aventstack</groupId>-->
-<!--      <artifactId>extentreports</artifactId>-->
-<!--      <version>5.0.9</version>-->
-<!--    </dependency>-->
-    <dependency>
+
+    <dependency> <!-- só para classe Report1FW combinar versão -->
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.0.9</version>
+    </dependency>
+
+    <dependency> <!-- só para classe ReportFW combinar versão -->
       <groupId>com.aventstack</groupId>
       <artifactId>extentreports</artifactId>
       <version>4.1.5</version>
