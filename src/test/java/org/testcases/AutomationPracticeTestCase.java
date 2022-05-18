@@ -44,6 +44,7 @@ public class TestCase extends BaseTest {
     }
 
     @Test(dataProvider = "loginWithCSV", dataProviderClass = DataClass.class)
+//    @Test(dataProvider = "login", dataProviderClass = DataClass.class)
     public void signInTest(String user, String passw) throws InterruptedException, IOException {
         indexTask = new IndexTask(driver);
         authenticationTask = new AuthenticationTask(driver);
@@ -51,9 +52,9 @@ public class TestCase extends BaseTest {
 
         ReportFw.createTest("Teste acesso login");
         indexTask.signIn();
-        ReportFw.extentTest.log(Status.PASS, "A pagina login", ScreenshotFw.screenshotBase64(driver));
+//        ReportFw.extentTest.log(Status.PASS, "A pagina login", ScreenshotFw.screenshotBase64(driver));
 //        ReportFw.extentTest.log(Status.PASS, "A pagina login", ScreenshotFw.screenshot(driver));
-//        authenticationTask.alreadyRegistered(user, passw);
+        authenticationTask.alreadyRegistered(user, passw);
 
 
         Thread.sleep(5000);
