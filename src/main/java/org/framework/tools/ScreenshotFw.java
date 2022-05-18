@@ -20,6 +20,25 @@ public class ScreenshotFw {
 
     private static final String PATH_PHOTO = System.getProperty("user.dir") + File.separator + "report" + File.separator + "photo";
 
+    public static String screenshotasPath(WebDriver driver) throws IOException {
+        File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String path = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"img"+File.separator+"image.png";
+        FileUtils.copyFile(src, new File(path));
+        return path;
+    }
+
+    public static String screenshotasBase64(WebDriver driver) throws IOException {
+        File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String path = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"img"+File.separator+"image.png";
+        FileUtils.copyFile(src, new File(path));
+        byte[] imageBytes = IOUtils.toByteArray(new FileInputStream(path));
+        return Base64.getEncoder().encodeToString(imageBytes);
+    }
+
+    public static String base64(WebDriver driver) {
+        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);
+    }
+
     /** Screenshot na pagina **/
     public static void screenshotas(WebDriver driver) throws IOException {
         File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
