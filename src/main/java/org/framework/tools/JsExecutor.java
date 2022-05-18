@@ -1,11 +1,12 @@
 package org.framework.tools;
 
+import org.framework.tools.reports.ReportFw;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
 public class JsExecutor {
 
-    public void highLightElement(WebDriver driver, WebElement element){
+    public static void highLightElement(WebDriver driver, WebElement element){
         scriptElement(driver, element, HighLight.RED.getArgument());
     }
 
@@ -16,6 +17,8 @@ public class JsExecutor {
     public static void highLightElementWithSend(WebDriver driver, WebElement element, String value){
         scriptElement(driver, element, HighLight.RED.getArgument());
         element.sendKeys(value);
+        ReportFw.test.info("Digitiu.", ScreenshotFw.screenshotBase64(driver));
+        highLightRemove(driver, element);
     }
 
     public static void highLightElementWithClick(WebDriver driver, WebElement element){
@@ -23,7 +26,7 @@ public class JsExecutor {
         element.click();
     }
 
-    public void highLightRemove(WebDriver driver, WebElement element) {
+    public static void highLightRemove(WebDriver driver, WebElement element) {
         scriptElement(driver, element, HighLight.REMOVE.getArgument());
     }
 
