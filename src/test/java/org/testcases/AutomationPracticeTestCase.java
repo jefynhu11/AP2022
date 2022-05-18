@@ -3,8 +3,9 @@ package org.testcases;
 import com.aventstack.extentreports.Status;
 import org.framework.data.DataClass;
 import org.framework.supports.BaseTest;
-import org.framework.tools.reports.ReportFw;
 import org.framework.tools.ScreenshotFw;
+import org.framework.tools.reports.ReportFw;
+import org.framework.utils.ObjectsUtils;
 import org.tasks.*;
 import org.testng.annotations.Test;
 
@@ -12,7 +13,7 @@ import java.io.IOException;
 
 import static org.framework.webdrivers.DriverFactory.driver;
 
-public class TestCase extends BaseTest {
+public class AutomationPracticeTestCase extends BaseTest {
 
     private IndexTask indexTask;
     private ContactTask contactTask;
@@ -24,6 +25,7 @@ public class TestCase extends BaseTest {
 
     @Test(dataProvider = "loginWithCSV", dataProviderClass = DataClass.class)
     public void searchProductAndBuyTest(String userName, String password) throws InterruptedException {
+        driver.get(ObjectsUtils.getPropertiesData("path", "url"));
         indexTask = new IndexTask(driver);
         productTask = new ProductTask(driver);
         indexTask.search();
@@ -34,6 +36,7 @@ public class TestCase extends BaseTest {
 
     @Test
     public void contactUsTest() throws InterruptedException {
+        driver.get(ObjectsUtils.getPropertiesData("path", "url"));
         indexTask = new IndexTask(driver);
         contactTask = new ContactTask(driver);
 
@@ -46,22 +49,22 @@ public class TestCase extends BaseTest {
     @Test(dataProvider = "loginWithCSV", dataProviderClass = DataClass.class)
 //    @Test(dataProvider = "login", dataProviderClass = DataClass.class)
     public void signInTest(String user, String passw) throws InterruptedException, IOException {
+        driver.get(ObjectsUtils.getPropertiesData("path", "automation"));
+        ReportFw.createTest("Teste acesso login");
+        ReportFw.test.info("O navegador está abrindo e acessando site 'Automation Practice'.");
         indexTask = new IndexTask(driver);
         authenticationTask = new AuthenticationTask(driver);
         myAccountTask = new MyAccountTask(driver);
 
-        ReportFw.createTest("Teste acesso login");
         indexTask.signIn();
-//        ReportFw.extentTest.log(Status.PASS, "A pagina login", ScreenshotFw.screenshotBase64(driver));
-//        ReportFw.extentTest.log(Status.PASS, "A pagina login", ScreenshotFw.screenshot(driver));
         authenticationTask.alreadyRegistered(user, passw);
-
 
         Thread.sleep(5000);
     }
 
     @Test(dataProvider = "loginWithCSV", dataProviderClass = DataClass.class)
     public void getVoucher(String user, String passw) throws IOException {
+        driver.get(ObjectsUtils.getPropertiesData("path", "url"));
         indexTask = new IndexTask(driver);
         authenticationTask = new AuthenticationTask(driver);
         myAccountTask = new MyAccountTask(driver);
