@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <!-- report theme -->
+        <!-- standard, dark -->
+        <theme>dark</theme>
+
+        <!-- enables timeline -->
+        <!-- defaults to true -->
+        <enableTimeline>true</enableTimeline>
+
+        <!-- document encoding -->
+        <!-- defaults to UTF-8 -->
+        <encoding>UTF-8</encoding>
+
+        <!-- protocol for script and stylesheets -->
+        <!-- defaults to https -->
+        <protocol>https</protocol>
+
+        <!-- title of the document -->
+        <documentTitle>Report</documentTitle>
+
+        <!-- report name - displayed at top-nav -->
+<!--        <reportName>Automaticon Praction</reportName>-->
+        <reportName>
+            <![CDATA[
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkm4OKcLt1QzUZmqhXxzX_cciEdjJl6N6fPo9q3KRcZZBhmLnDR9_j4nfFSXOOMSExve8&usqp=CAU' height="30" width="30"/>
+            ]]>
+        </reportName>
+
+        <!-- custom javascript -->
+        <scripts>
+            <![CDATA[
+                $(document).ready(function() {
+
+                });
+            ]]>
+        </scripts>
+
+        <!-- custom styles -->
+        <styles>
+            <![CDATA[
+
+            ]]>
+        </styles>
+    </configuration>
+</extentreports>
