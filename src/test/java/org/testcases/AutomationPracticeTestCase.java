@@ -22,7 +22,6 @@ public class AutomationPracticeTestCase extends BaseTest {
     private MyAccountTask myAccountTask;
     private OrderHistoryTask orderHistoryTask;
 
-
     @Test(dataProvider = "loginWithCSV", dataProviderClass = DataClass.class)
     public void searchProductAndBuyTest(String userName, String password) throws InterruptedException {
         driver.get(ObjectsUtils.getPropertiesData("path", "url"));
