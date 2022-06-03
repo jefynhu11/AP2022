@@ -1,5 +1,7 @@
 package org.tasks;
 
+import org.framework.tools.ScreenshotFw;
+import org.framework.tools.reports.ReportFw;
 import org.openqa.selenium.WebDriver;
 import org.pageobjects.ProductAppObject;
 import org.testng.Assert;
@@ -36,8 +38,10 @@ public class ProductTask {
         productAppObject.getProceedToCheckoutButtonContinue().click();
 //        productAppObject.getPayByBankWireButton().click();
 //        productAppObject.getPayByCheckButton().click();
+        ReportFw.test.info("Escolhe forma de pagamento.", ScreenshotFw.screenshotBase64(driver));
         productAppObject.getBankOrCheck(2).click(); // só inserir (1) -> bank | (2) -> Check
         productAppObject.getProceedToCheckoutButtonContinue().click();
         Assert.assertEquals(productAppObject.getValidaText().getText(), "ORDER CONFIRMATION");
+        ReportFw.test.pass("Finalmente de comprar o produto.", ScreenshotFw.screenshotBase64(driver));
     }
 }
