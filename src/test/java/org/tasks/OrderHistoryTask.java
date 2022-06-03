@@ -36,7 +36,7 @@ public class OrderHistoryTask {
     public void codeVoucher2() throws IOException {
         List<WebElement> codes = orderHistoryAppObject.getCodeVoucherText();
         int i = 0;
-        String fileName = "my-files.properties";
+        String fileName = "getCodigoVoucher.properties";
         PrintWriter writer = new PrintWriter(PATH+fileName);
         for (WebElement codigos : codes) {
             i++;
