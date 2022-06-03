@@ -20,6 +20,8 @@ public class IndexTask {
 
     public void contactUs() {
         indexAppObject.getContactUsButton().click();
+        Assert.assertEquals(driver.getTitle(), "Contact us - My Store");
+        ReportFw.test.pass("Entrou a pagina contato Automation Practice.", ScreenshotFw.screenshotBase64(driver));
     }
     public void signIn() {
         Assert.assertEquals("My Store", driver.getTitle());
@@ -28,6 +30,7 @@ public class IndexTask {
     }
     public void search(){
         indexAppObject.getSearchTextField().sendKeys("blouse");
+        ReportFw.test.info("Preenche o campo de pesquisa.", ScreenshotFw.screenshotBase64(driver));
         indexAppObject.getSearchButton().click();
     }
 }
