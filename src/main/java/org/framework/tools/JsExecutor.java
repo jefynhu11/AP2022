@@ -17,7 +17,6 @@ public class JsExecutor {
     public static void highLightElementWithSend(WebDriver driver, WebElement element, String value){
         scriptElement(driver, element, HighLight.RED.getArgument());
         element.sendKeys(value);
-        ReportFw.test.info("Digitiu.", ScreenshotFw.screenshotBase64(driver));
         highLightRemove(driver, element);
     }
 
