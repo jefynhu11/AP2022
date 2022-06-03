@@ -2,6 +2,7 @@ package org.tasks;
 
 import org.framework.tools.JsExecutor;
 import org.framework.tools.ScreenshotFw;
+import org.framework.tools.reports.ReportFw;
 import org.openqa.selenium.WebDriver;
 import org.pageobjects.MyAccountAppObject;
 
@@ -21,6 +22,7 @@ public class MyAccountTask {
     public void myAccountHistoryDetails() {
         jsExecutor.highLightElement(driver, myAccountAppObject.getOrderHistoryDetailsButton());
         myAccountAppObject.getOrderHistoryDetailsButton().click();
+        ReportFw.test.info("Entrou Historico e detalhe.", ScreenshotFw.screenshotBase64(driver));
     }
     public void myCreditSlips() {
         jsExecutor.highLightElement(driver, myAccountAppObject.getMyCreditSlipsButton());
